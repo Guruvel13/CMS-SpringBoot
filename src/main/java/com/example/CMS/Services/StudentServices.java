@@ -1,11 +1,14 @@
-package Services;
+package com.example.CMS.Services;
 
-import Modules.Student;
+import com.example.CMS.Modules.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+@Service
 
 public class StudentServices {
 
@@ -19,8 +22,12 @@ public class StudentServices {
         return std;
     }
 
-
-    public List<Student> getStudentCourse(){
-        return Collections.singletonList(std.getLast());
+    public List<String> getStdCourse() {
+        List<String> courses = new ArrayList<>();
+        for (Student s : std) {
+            courses.add(s.getCourse());
+        }
+        return courses;
     }
+
 }

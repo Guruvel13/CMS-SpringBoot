@@ -1,9 +1,10 @@
-package Controllers;
+package com.example.CMS.Controllers;
 
-import Modules.Student;
-import Services.StudentServices;
+import com.example.CMS.Modules.Student;
+import com.example.CMS.Services.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,8 +21,9 @@ public class StudentControllers {
         return studentService.getStudentDetails();
     }
 
-    @GetMapping("/course")
-    public List<Student> getStudentCourse(){
-        return studentService.getStudentCourse();
+    @PostMapping("/course")
+    public List<String> getStdCourse(){
+        return studentService.getStdCourse();
     }
+
 }
